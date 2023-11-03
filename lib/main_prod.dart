@@ -3,5 +3,5 @@ import 'flavors.dart';
 
 void main() {
   F.appFlavor = Flavor.PROD;
-  main_app();
+  mainApp();
 }

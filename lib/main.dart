@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
 import 'flavors.dart';
 
-void main_app() {
+void mainApp() {
   Color appBarColor = Colors.black;
   if (F.appFlavor == Flavor.DEV) {
     appBarColor = Colors.blue;

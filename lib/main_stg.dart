@@ -3,5 +3,5 @@ import 'flavors.dart';
 
 void main() {
   F.appFlavor = Flavor.STG;
-  main_app();
+  mainApp();
 }

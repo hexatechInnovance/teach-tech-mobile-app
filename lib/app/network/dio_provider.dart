@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_basic/app/network/pretty_dio_logger.dart';
+import 'package:teach_tech_mobile/app/network/pretty_dio_logger.dart';
 // import 'package:flutter_basic/app/network/token_interceptor.dart';
 
 class DioProvider {

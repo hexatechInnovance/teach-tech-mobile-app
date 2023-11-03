@@ -1,4 +1,4 @@
-import 'package:flutter_basic/main.dart';
+import 'package:teach_tech_mobile/main.dart';
 import 'flavors.dart';
 
 void main() {

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_basic/app/data/local/preference/preference_manager.dart';
-import 'package:flutter_basic/app/log.dart';
-import 'package:flutter_basic/app/network/dio_provider.dart';
+import 'package:teach_tech_mobile/app/data/local/preference/preference_manager.dart';
+import 'package:teach_tech_mobile/app/log.dart';
+import 'package:teach_tech_mobile/app/network/dio_provider.dart';
 import 'package:get/get.dart' as getx;
 import 'package:get/get_core/src/get_main.dart';
 

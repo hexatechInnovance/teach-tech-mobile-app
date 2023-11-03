@@ -1,4 +1,4 @@
-import 'package:flutter_basic/app/network/exceptions/base_exception.dart';
+import 'package:teach_tech_mobile/app/network/exceptions/base_exception.dart';
 
 class JsonFormatException extends BaseException {
   JsonFormatException({String message = "Unable to parse JSON data"})

@@ -1,4 +1,4 @@
-import 'package:flutter_basic/app/network/exceptions/app_exception.dart';
+import 'package:teach_tech_mobile/app/network/exceptions/app_exception.dart';
 
 abstract class BaseApiException extends AppException {
   final int httpCode;

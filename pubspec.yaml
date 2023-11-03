@@ -1,4 +1,4 @@
-name: flutter_basic
+name: teach_tech_mobile
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
@@ -31,7 +31,7 @@ flavorizr:
         name: "dev"
 
       android:
-        applicationId: "com.rootless.flutter_basic"
+        applicationId: "com.rootless.teach_tech_mobile"
 
       ios:
         bundleId: "com.rootless.flutterBasic"
@@ -41,7 +41,7 @@ flavorizr:
         name: "stg"
 
       android:
-        applicationId: "com.rootless.flutter_basic"
+        applicationId: "com.rootless.teach_tech_mobile"
       ios:
         bundleId: "com.rootless.flutterBasic"
 
@@ -50,7 +50,7 @@ flavorizr:
         name: "prod"
 
       android:
-        applicationId: "com.rootless.flutter_basic"
+        applicationId: "com.rootless.teach_tech_mobile"
       ios:
         bundleId: "com.rootless.flutterBasic"
 

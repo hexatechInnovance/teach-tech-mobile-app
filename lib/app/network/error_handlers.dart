@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_basic/app/log.dart';
-import 'package:flutter_basic/app/network/exceptions/api_exception.dart';
-import 'package:flutter_basic/app/network/exceptions/app_exception.dart';
-import 'package:flutter_basic/app/network/exceptions/network_exception.dart';
-import 'package:flutter_basic/app/network/exceptions/not_found_exception.dart';
-import 'package:flutter_basic/app/network/exceptions/service_unavailable_exception.dart';
-import 'package:flutter_basic/app/network/exceptions/unauthorize_exception.dart';
+import 'package:teach_tech_mobile/app/log.dart';
+import 'package:teach_tech_mobile/app/network/exceptions/api_exception.dart';
+import 'package:teach_tech_mobile/app/network/exceptions/app_exception.dart';
+import 'package:teach_tech_mobile/app/network/exceptions/network_exception.dart';
+import 'package:teach_tech_mobile/app/network/exceptions/not_found_exception.dart';
+import 'package:teach_tech_mobile/app/network/exceptions/service_unavailable_exception.dart';
+import 'package:teach_tech_mobile/app/network/exceptions/unauthorize_exception.dart';
 
 Exception handleError(String error) {
 

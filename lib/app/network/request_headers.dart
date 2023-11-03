@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:flutter_basic/app/data/local/preference/preference_manager.dart';
+import 'package:teach_tech_mobile/app/data/local/preference/preference_manager.dart';
 
 class RequestHeaderInterceptor extends InterceptorsWrapper {
   final PreferenceManager _preferenceManager =

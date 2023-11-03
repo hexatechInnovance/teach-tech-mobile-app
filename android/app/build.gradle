@@ -33,17 +33,17 @@ android {
     productFlavors {
         dev {
             dimension "flavor-type"
-            applicationId "com.rootless.flutter_basic"
+            applicationId "com.rootless.teach_tech_mobile"
             resValue "string", "app_name", "dev"
         }
         stg {
             dimension "flavor-type"
-            applicationId "com.rootless.flutter_basic"
+            applicationId "com.rootless.teach_tech_mobile"
             resValue "string", "app_name", "stg"
         }
         prod {
             dimension "flavor-type"
-            applicationId "com.rootless.flutter_basic"
+            applicationId "com.rootless.teach_tech_mobile"
             resValue "string", "app_name", "prod"
         }
     }

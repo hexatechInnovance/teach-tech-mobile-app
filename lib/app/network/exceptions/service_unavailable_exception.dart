@@ -1,10 +1,11 @@
 import 'dart:io';
-import 'package:flutter_basic/app/network/exceptions/base_api_exception.dart';
+import 'package:teach_tech_mobile/app/network/exceptions/base_api_exception.dart';
 
 class ServiceUnavailableException extends BaseApiException {
   ServiceUnavailableException(String message)
       : super(
-            httpCode: HttpStatus.serviceUnavailable,
-            message: message,
-            status: "");
+          httpCode: HttpStatus.serviceUnavailable,
+          message: message,
+          status: "",
+        );
 }

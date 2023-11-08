@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:teach_tech_mobile/app/modules/login/controllers/login_controller.dart';
 import 'package:teach_tech_mobile/app/utils/app_text.dart';
@@ -87,8 +88,44 @@ class LoginView extends GetView<LoginController> {
               ),
             ],
           ),
-          CustomEmptySizeBox.emptySizeBox_30,
+          CustomEmptySizeBox.emptySizeBox_10,
           // Login Button
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Obx(
+                    () => Checkbox(
+                      activeColor: CustomBorderDecoration.containerColorBlue,
+                      value: controller.rememberMeIsChecked.value,
+                      onChanged: (bool? value) {
+                        controller.toggleRememberMe(value!);
+                      },
+                    ),
+                  ),
+                  const Text(
+                    AppText.rememberMe,
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ],
+              ),
+              Container(
+                decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(color: Colors.black, width: 1))),
+                child: const Text(
+                  AppText.forgotPassword,
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          CustomEmptySizeBox.emptySizeBox_30,
+
           GestureDetector(
             onTap: () {
               controller.login();
@@ -109,6 +146,23 @@ class LoginView extends GetView<LoginController> {
                   fontSize: 15,
                 ),
               )),
+            ),
+          ),
+          CustomEmptySizeBox.emptySizeBox_10,
+          Container(
+            width: double.infinity,
+            height: SizeHelper.dimen_50,
+            decoration: BoxDecoration(
+              borderRadius: CustomBorderDecoration.borderRadius_10,
+              color: CustomBorderDecoration.containerColorGrey,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset("assets/icons/icons_google.svg", height: 30,width: 30,),
+                SizedBox(width: 5,),
+                Text("Sign-in with google", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold))
+              ],
             ),
           ),
         ],

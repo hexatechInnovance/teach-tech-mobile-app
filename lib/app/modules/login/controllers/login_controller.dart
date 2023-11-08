@@ -5,6 +5,7 @@ import 'package:teach_tech_mobile/app/log.dart';
 class LoginController extends GetxController {
   Rx<TextEditingController> emailController = TextEditingController().obs;
   Rx<TextEditingController> passwordController = TextEditingController().obs;
+  RxBool rememberMeIsChecked = false.obs;
 
   @override
   void onInit() {
@@ -23,5 +24,9 @@ class LoginController extends GetxController {
 
   void login(){
     Log.debug("Pressed");
+  }
+
+  void toggleRememberMe(bool value) {
+    rememberMeIsChecked(value);
   }
 }

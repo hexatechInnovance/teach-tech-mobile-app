@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:teach_tech_mobile/app/log.dart';
 
 class LoginController extends GetxController {
   Rx<TextEditingController> emailController = TextEditingController().obs;
@@ -20,5 +21,7 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-  void login(){}
+  void login(){
+    Log.debug("Pressed");
+  }
 }

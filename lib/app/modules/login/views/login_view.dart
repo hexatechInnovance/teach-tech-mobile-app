@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:teach_tech_mobile/app/modules/login/controllers/login_controller.dart';
+import 'package:teach_tech_mobile/app/routes/app_pages.dart';
 import 'package:teach_tech_mobile/app/utils/app_text.dart';
+import 'package:teach_tech_mobile/app/utils/asset_endpoint.dart';
 import 'package:teach_tech_mobile/app/utils/custom_border_decoration.dart';
 import 'package:teach_tech_mobile/app/utils/custom_empty_size_box.dart';
 import 'package:teach_tech_mobile/app/utils/size_helper.dart';
@@ -111,14 +113,19 @@ class LoginView extends GetView<LoginController> {
                   ),
                 ],
               ),
-              Container(
-                decoration: const BoxDecoration(
+              GestureDetector(
+                onTap: _forgotButtonOnPressed,
+                child: Container(
+                  decoration: const BoxDecoration(
                     border: Border(
-                        bottom: BorderSide(color: Colors.black, width: 1))),
-                child: const Text(
-                  AppText.forgotPassword,
-                  style: TextStyle(
-                    color: Colors.black,
+                      bottom: BorderSide(color: Colors.black, width: 1),
+                    ),
+                  ),
+                  child: const Text(
+                    AppText.forgotPassword,
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ),
@@ -159,14 +166,58 @@ class LoginView extends GetView<LoginController> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset("assets/icons/icons_google.svg", height: 30,width: 30,),
-                SizedBox(width: 5,),
-                Text("Sign-in with google", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold))
+                SvgPicture.asset(
+                  AssetEndpoint.googleIcon,
+                  height: 30,
+                  width: 30,
+                ),
+                CustomEmptySizeBox.emptySizeBoxRow_5,
+                const Text(
+                  AppText.signInWithGoogle,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
           ),
+          CustomEmptySizeBox.emptySizeBox_30,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                AppText.haveAccount,
+                style: TextStyle(color: Colors.black),
+              ),
+              GestureDetector(
+                onTap: _signUpButtonPressed,
+                child: Container(
+                  decoration: const BoxDecoration(
+                      border: Border(
+                          bottom:
+                              BorderSide(color: Colors.blueAccent, width: 1))),
+                  child: const Text(
+                    AppText.signUp,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blueAccent,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     ));
+  }
+
+  void _signUpButtonPressed() {
+    Get.toNamed(Routes.SIGN_UP);
+  }
+
+  void _forgotButtonOnPressed() {
+
   }
 }

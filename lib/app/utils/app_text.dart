@@ -7,4 +7,7 @@ abstract class AppText {
   static const String login = "Login";
   static const String rememberMe = "Remember me";
   static const String forgotPassword = "Forgot password?";
+  static const String signInWithGoogle = "Sign-in with google";
+  static const String haveAccount = "Don't have an account yet?";
+  static const String signUp = "Sign up";
 }

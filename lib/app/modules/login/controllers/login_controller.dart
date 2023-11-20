@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:teach_tech_mobile/app/log.dart';
 
 class LoginController extends GetxController {
-  //TODO: Implement LoginController
+  Rx<TextEditingController> emailController = TextEditingController().obs;
+  Rx<TextEditingController> passwordController = TextEditingController().obs;
+  RxBool rememberMeIsChecked = false.obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +22,11 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void login(){
+    Log.debug("Pressed");
+  }
+
+  void toggleRememberMe(bool value) {
+    rememberMeIsChecked(value);
+  }
 }

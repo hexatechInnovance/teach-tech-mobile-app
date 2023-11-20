@@ -6,7 +6,7 @@ import 'flavors.dart';
 void mainApp() {
   Color appBarColor = Colors.black;
   if (F.appFlavor == Flavor.DEV) {
-    appBarColor = Colors.blue;
+    appBarColor = Colors.transparent;
   } else if (F.appFlavor == Flavor.STG) {
     appBarColor = Colors.green;
   } else if (F.appFlavor == Flavor.PROD) {
@@ -18,6 +18,7 @@ void mainApp() {
       title: "Application",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      debugShowCheckedModeBanner: false,
       color: Colors.blue,
       theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: appBarColor)),
     ),

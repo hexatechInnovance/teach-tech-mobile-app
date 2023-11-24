@@ -1,7 +1,20 @@
-import 'package:teach_tech_mobile/main.dart';
-import 'flavors.dart';
+import 'package:flutter/material.dart';
+import 'package:teach_tech_mobile/falvors/build_config.dart';
+import 'package:teach_tech_mobile/falvors/env_config.dart';
+import 'package:teach_tech_mobile/falvors/environment.dart';
+import 'package:teach_tech_mobile/app/my_app.dart';
 
 void main() {
-  F.appFlavor = Flavor.PROD;
-  mainApp();
+  EnvConfig devConfig = EnvConfig(
+    appName: "Teach Tech Prod",
+    baseUrl: "",
+    shouldCollectCrashLog: true,
+  );
+
+  BuildConfig.instantiate(
+    environment: Environment.PRODUCTION,
+    envConfig: devConfig,
+  );
+
+  runApp(const MyApp());
 }

@@ -12,4 +12,19 @@ class TextStyles {
     color: Colors.black,
     fontSize: 17,
   );
+
+  static TextStyle titleTextStyle = const TextStyle(
+    color: Colors.white,
+    fontSize: 18,
+  );
+
+  static TextStyle titleDescriptionTextStyle = const TextStyle(
+    color: Colors.white,
+    fontSize: 14,
+  );
+
+  static TextStyle iconButtonTitleTextStyle = const TextStyle(
+    color: Colors.white,
+    fontSize: 10,
+  );
 }

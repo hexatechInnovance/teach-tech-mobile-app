@@ -3,13 +3,13 @@ import 'package:teach_tech_mobile/app/core/values/app_colors.dart';
 import 'package:teach_tech_mobile/app/core/widgets/app_bar_title.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String appBarTitleText;
+  final String? appBarTitleText;
   final List<Widget>? actions;
   final bool isBackButtonEnabled;
 
   CustomAppBar({
     Key? key,
-    required this.appBarTitleText,
+    this.appBarTitleText,
     this.actions,
     this.isBackButtonEnabled = true,
   }) : super(key: key);
@@ -20,13 +20,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.appBarColor,
+      backgroundColor: AppColors.pageBackground,
       centerTitle: true,
       elevation: 0,
       automaticallyImplyLeading: isBackButtonEnabled,
       actions: actions,
       iconTheme: const IconThemeData(color: AppColors.appBarIconColor),
-      title: AppBarTitle(text: appBarTitleText),
+      title: appBarTitleText != null
+          ? AppBarTitle(text: appBarTitleText!)
+          : Container(),
     );
   }
 }

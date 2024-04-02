@@ -1,8 +1,7 @@
 import 'package:get/get.dart';
-import 'package:teach_tech_mobile/app/core/base/base_controller.dart';
 
-class HomeController extends BaseController {
-  //TODO: Implement HomeController
+class PaymentController extends GetxController {
+  //TODO: Implement PaymentController
 
   final count = 0.obs;
   @override

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
-  static const Color pageBackground = Color(0xFFFAFBFD);
+  static Color pageBackground = Colors.deepPurple.shade400;
+  static const Color pageBackground1 = Colors.deepPurple;
   static const Color statusBarColor = Colors.deepPurple;
   static const Color appBarColor = Color(0xFF0362AD);
   static const Color appBarIconColor = Color(0xFFFFFFFF);

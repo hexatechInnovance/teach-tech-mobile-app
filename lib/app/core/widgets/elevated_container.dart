@@ -11,7 +11,7 @@ class ElevatedContainer extends StatelessWidget {
   const ElevatedContainer({
     Key? key,
     required this.child,
-    this.bgColor = AppColors.pageBackground,
+    this.bgColor = AppColors.pageBackground1,
     this.padding,
     this.borderRadius = AppValues.smallRadius,
   }) : super(key: key);

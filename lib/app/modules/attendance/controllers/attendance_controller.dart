@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
+import 'package:teach_tech_mobile/app/core/base/base_controller.dart';
 
-class AttendanceController extends GetxController {
+class AttendanceController extends BaseController {
   //TODO: Implement AttendanceController
 
   final count = 0.obs;

@@ -38,7 +38,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ATTENDANCE,
-      page: () => const AttendanceView(),
+      page: () => AttendanceView(),
       binding: AttendanceBinding(),
     ),
     GetPage(

@@ -6,4 +6,8 @@ abstract class AppValues {
   static const double smallRadius = 8;
 
   static const double margin = 16;
+
+
+  static const double dimen_46 = 46;
+  static const double dimen_60 = 60;
 }

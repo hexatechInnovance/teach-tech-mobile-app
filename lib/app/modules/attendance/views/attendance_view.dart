@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teach_tech_mobile/app/core/base/base_view.dart';
 import 'package:teach_tech_mobile/app/core/widgets/custom_app_bar.dart';
+import 'package:teach_tech_mobile/app/core/widgets/extended_outline_button.dart';
+import 'package:teach_tech_mobile/app/log.dart';
+import 'package:teach_tech_mobile/app/modules/attendance/ui_model/attendance_ui_model.dart';
 import 'package:teach_tech_mobile/app/modules/attendance/widgets/attendance_item.dart';
 import 'package:teach_tech_mobile/app/utils/text_style.dart';
 
 import '../controllers/attendance_controller.dart';
 
 class AttendanceView extends BaseView<AttendanceController> {
+
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar();
@@ -27,6 +31,7 @@ class AttendanceView extends BaseView<AttendanceController> {
           style: TextStyles.attendanceTitleStyle,
         ),
         _attendanceCard(context),
+        const SizedBox(height: 20,),
         _getAttendanceUploadButton(),
       ],
     );
@@ -37,35 +42,36 @@ class AttendanceView extends BaseView<AttendanceController> {
       width: double.infinity,
       height: MediaQuery.of(context).size.height * .7,
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
         color: Colors.deepPurple[300],
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ListView.builder(
-              itemCount: 50,
-              itemBuilder: (BuildContext context, int index) {
-                return _getAttendanceItem(
-                  "1001",
-                  "ABCDEFGSD S SDSDS",
-                );
-              }),
-        ),
+        child: Obx(() => ListView.builder(
+            itemCount: controller.attendanceList.length,
+            itemBuilder: (BuildContext context, int index) {
+              AttendanceUiModel attendanceUiModel =
+                  controller.attendanceList[index];
+              return _getAttendanceItem(
+                id: (index + 1).toString(),
+                name: attendanceUiModel.name,
+              );
+            })),
       ),
     );
   }
 
-  Widget _getAttendanceItem(String id, String name) {
+  Widget _getAttendanceItem({required String id, required String name}) {
     return AttendanceItem(
-        id: id, name: name, isChecked: true, onChanged: (bool? val) {});
+        id: id, name: name, isChecked: false, onChanged: (bool? val) {});
   }
 
   Widget _getAttendanceUploadButton() {
-    return ElevatedButton(
-      onPressed: null,
-      child: Text(
-        "Submit",
-        style: TextStyle(color: Colors.white),
-      ),
+    return ExtendedOutlinedButton(
+      onPressed: _onPressedSubmit,
+      text: 'Submit',
+      color: Colors.deepPurple,
     );
+  }
+
+  void _onPressedSubmit() {
+    Log.debug("Pressed");
   }
 }

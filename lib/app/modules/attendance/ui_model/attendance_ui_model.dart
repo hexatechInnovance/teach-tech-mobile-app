@@ -1,19 +1,38 @@
 import 'package:equatable/equatable.dart';
+import 'package:get/get.dart';
 import 'package:teach_tech_mobile/app/data/model/response/attendance.dart';
 
 class AttendanceUiModel extends Equatable {
-  final String name;
+  final int id;
+  final Student student;
+  final String date;
+  final RxBool status;
+  final int courseId;
 
-  const AttendanceUiModel({
-    required this.name,
-  });
+  AttendanceUiModel({
+    required this.id,
+    required this.student,
+    required this.date,
+    required bool status,
+    required this.courseId,
+  }) : status = RxBool(status);
 
   factory AttendanceUiModel.fromAttendance(Attendance model) {
-    return AttendanceUiModel(name: model.name ?? "");
+    return AttendanceUiModel(
+      id: model.id!,
+      student: model.student!,
+      date: model.date!,
+      status: model.status!,
+      courseId: model.course!,
+    );
   }
 
   @override
   List<Object?> get props => <Object?>[
-        name,
+        id,
+        student,
+        date,
+        status,
+        courseId,
       ];
 }

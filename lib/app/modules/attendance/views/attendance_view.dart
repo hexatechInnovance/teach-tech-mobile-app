@@ -12,7 +12,6 @@ import 'package:teach_tech_mobile/app/utils/text_style.dart';
 import '../controllers/attendance_controller.dart';
 
 class AttendanceView extends BaseView<AttendanceController> {
-
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar();
@@ -31,7 +30,9 @@ class AttendanceView extends BaseView<AttendanceController> {
           style: TextStyles.attendanceTitleStyle,
         ),
         _attendanceCard(context),
-        const SizedBox(height: 20,),
+        const SizedBox(
+          height: 20,
+        ),
         _getAttendanceUploadButton(),
       ],
     );
@@ -49,18 +50,21 @@ class AttendanceView extends BaseView<AttendanceController> {
             itemBuilder: (BuildContext context, int index) {
               AttendanceUiModel attendanceUiModel =
                   controller.attendanceList[index];
-              return _getAttendanceItem(
-                id: (index + 1).toString(),
-                name: attendanceUiModel.name,
-              );
+              return _getAttendanceItem(model: attendanceUiModel);
             })),
       ),
     );
   }
 
-  Widget _getAttendanceItem({required String id, required String name}) {
-    return AttendanceItem(
-        id: id, name: name, isChecked: false, onChanged: (bool? val) {});
+  Widget _getAttendanceItem({required AttendanceUiModel model}) {
+    return Obx(() => AttendanceItem(
+          id: model.student.id.toString(),
+          name: model.student.name!,
+          isChecked: model.status.value,
+          onChanged: (bool? isChecked) {
+            controller.toggleCheckedItem(model);
+          },
+        ));
   }
 
   Widget _getAttendanceUploadButton() {

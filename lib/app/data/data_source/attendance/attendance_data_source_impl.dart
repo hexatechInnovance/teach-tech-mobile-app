@@ -10,7 +10,7 @@ class AttendanceDataSourceImpl extends BaseRemoteSource
   Future<AttendanceResponse> getAttendanceList({
     required int courseId,
   }) async {
-    Future<Response<dynamic>> response = plainDio.get(Endpoint.attendanceList);
+    Future<Response<dynamic>> response = plainDio.get("${Endpoint.attendanceList}/$courseId/");
 
     return callApiWithErrorParser(
       () => response,

@@ -24,6 +24,10 @@ class AttendanceController extends BaseController {
     );
   }
 
+  void toggleCheckedItem(AttendanceUiModel model) {
+    model.status.value = !model.status.value;
+  }
+
   @override
   void onReady() {
     super.onReady();

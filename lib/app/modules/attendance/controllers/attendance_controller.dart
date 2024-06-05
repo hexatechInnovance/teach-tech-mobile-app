@@ -3,7 +3,6 @@ import 'package:teach_tech_mobile/app/core/base/base_controller.dart';
 import 'package:teach_tech_mobile/app/data/model/request/attendance_request.dart';
 import 'package:teach_tech_mobile/app/data/model/response/attendance_response.dart';
 import 'package:teach_tech_mobile/app/data/repository/attendance/attendance_repository.dart';
-import 'package:teach_tech_mobile/app/log.dart';
 import 'package:teach_tech_mobile/app/modules/attendance/ui_model/attendance_ui_model.dart';
 
 class AttendanceController extends BaseController {
@@ -11,14 +10,16 @@ class AttendanceController extends BaseController {
   final RxList<AttendanceUiModel> attendanceList =
       RxList<AttendanceUiModel>(List.empty(growable: true));
 
+  late final int courseId;
+
   @override
   void onInit() {
     super.onInit();
+    courseId = Get.arguments['courseId'];
     _getAttendanceList();
   }
 
   void _getAttendanceList() async {
-    int courseId = 1;
     _attendanceRepository.getAttendanceList(courseId: courseId).then(
       (AttendanceResponse attendanceResponse) {
         attendanceList.value = attendanceResponse.getListOfAttendanceUiModel();

@@ -39,7 +39,7 @@ class AttendanceController extends BaseController {
     }
 
     _attendanceRepository
-        .updateAttendance(courseId: 1, attendanceList: updatedAttendanceList)
+        .updateAttendance(courseId: courseId, attendanceList: updatedAttendanceList)
         .then((bool value) {
       _getAttendanceList();
     });

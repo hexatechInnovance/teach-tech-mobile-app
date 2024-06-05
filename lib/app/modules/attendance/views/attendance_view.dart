@@ -76,6 +76,6 @@ class AttendanceView extends BaseView<AttendanceController> {
   }
 
   void _onPressedSubmit() {
-    Log.debug("Pressed");
+    controller.submitAttendance();
   }
 }

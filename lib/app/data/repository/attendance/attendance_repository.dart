@@ -4,4 +4,9 @@ abstract class AttendanceRepository {
   Future<AttendanceResponse> getAttendanceList({
     required int courseId,
   });
+
+  Future<bool> updateAttendance({
+    required int courseId,
+    required attendanceList,
+  });
 }

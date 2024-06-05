@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 import 'package:teach_tech_mobile/app/core/base/base_controller.dart';
+import 'package:teach_tech_mobile/app/data/model/request/attendance_request.dart';
 import 'package:teach_tech_mobile/app/data/model/response/attendance_response.dart';
 import 'package:teach_tech_mobile/app/data/repository/attendance/attendance_repository.dart';
+import 'package:teach_tech_mobile/app/log.dart';
 import 'package:teach_tech_mobile/app/modules/attendance/ui_model/attendance_ui_model.dart';
 
 class AttendanceController extends BaseController {
@@ -26,6 +28,20 @@ class AttendanceController extends BaseController {
 
   void toggleCheckedItem(AttendanceUiModel model) {
     model.status.value = !model.status.value;
+  }
+
+  void submitAttendance() async {
+    List<AttendanceRequest> updatedAttendanceList = [];
+    for (int i = 0; i < attendanceList.length; i++) {
+      updatedAttendanceList.add(AttendanceRequest(
+          id: attendanceList[i].id, status: attendanceList[i].status.value));
+    }
+
+    _attendanceRepository
+        .updateAttendance(courseId: 1, attendanceList: updatedAttendanceList)
+        .then((bool value) {
+      _getAttendanceList();
+    });
   }
 
   @override

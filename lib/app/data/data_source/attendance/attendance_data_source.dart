@@ -4,4 +4,9 @@ abstract class AttendanceDataSource {
   Future<AttendanceResponse> getAttendanceList({
     required int courseId,
   });
+
+  Future<bool> updateAttendanceList({
+    required int courseId,
+    required dynamic requestBody,
+  });
 }

@@ -166,7 +166,8 @@ class HomeView extends BaseView<HomeController> {
   }
 
   void _navigateToAttendancePage() {
-    Get.toNamed(Routes.ATTENDANCE);
+    int courseId = 1;
+    Get.toNamed(Routes.ATTENDANCE, arguments: {'courseId' : courseId});
   }
 
   void _navigateToStudentPage() {

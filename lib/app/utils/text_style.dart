@@ -27,4 +27,14 @@ class TextStyles {
     color: Colors.white,
     fontSize: 10,
   );
+
+  static TextStyle attendanceTitleStyle = const TextStyle(
+    color: Colors.white,
+    fontSize: 24,
+  );
+
+  static TextStyle attendanceTextStyle = const TextStyle(
+    color: Colors.white,
+    fontSize: 18,
+  );
 }

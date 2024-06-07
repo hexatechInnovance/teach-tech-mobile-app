@@ -44,14 +44,14 @@ class HomeView extends BaseView<HomeController> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Text(
-                "COURSE NAME",
+                controller.rxCourse.value.courseName,
                 style: TextStyles.titleTextStyle,
               ),
               const SizedBox(
                 height: 5,
               ),
               Text(
-                "INSTRUCTOR NAME",
+                controller.rxCourse.value.courseInstructorUiModel.userName,
                 style: TextStyles.titleDescriptionTextStyle,
               ),
               const SizedBox(
@@ -64,24 +64,11 @@ class HomeView extends BaseView<HomeController> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "CLASS : X",
+                          "CLASS : ${controller.rxCourse.value.batchClass}",
                           style: TextStyles.titleDescriptionTextStyle,
                         ),
                         Text(
-                          "BATCH : 2",
-                          style: TextStyles.titleDescriptionTextStyle,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Student : 100",
-                          style: TextStyles.titleDescriptionTextStyle,
-                        ),
-                        Text(
-                          "Capacity : 100",
+                          "BATCH : ${controller.rxCourse.value.id}",
                           style: TextStyles.titleDescriptionTextStyle,
                         ),
                       ],
@@ -90,11 +77,24 @@ class HomeView extends BaseView<HomeController> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "START : 20/03/20224",
+                          "Student : ${controller.rxCourse.value.currentStudent}",
                           style: TextStyles.titleDescriptionTextStyle,
                         ),
                         Text(
-                          "END : 20/03/2024",
+                          "Capacity : ${controller.rxCourse.value.capacity}",
+                          style: TextStyles.titleDescriptionTextStyle,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "START : ${controller.rxCourse.value.startDate}",
+                          style: TextStyles.titleDescriptionTextStyle,
+                        ),
+                        Text(
+                          "END : ${controller.rxCourse.value.endDate}",
                           style: TextStyles.titleDescriptionTextStyle,
                         ),
                       ],
@@ -103,11 +103,11 @@ class HomeView extends BaseView<HomeController> {
                 ),
               ),
               Text(
-                "Days : Saturday, Sunday, Monday",
+                "Days : ${controller.rxCourse.value.days[0]}, ${controller.rxCourse.value.days[1]}, ${controller.rxCourse.value.days[2]}",
                 style: TextStyles.titleDescriptionTextStyle,
               ),
               Text(
-                "Time : 03:00 PM",
+                "Time : ${controller.rxCourse.value.batchTime}",
                 style: TextStyles.titleDescriptionTextStyle,
               ),
             ],
